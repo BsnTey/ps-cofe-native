@@ -14,6 +14,7 @@ export const Colors = {
 };
 
 export const Gaps = {
+	g8: 8,
 	g13: 13,
 	g16: 16,
 	g24: 24,

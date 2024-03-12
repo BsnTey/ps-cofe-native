@@ -7,15 +7,13 @@ import {
 	Text,
 } from 'react-native';
 import { Colors, Fonts, Radius } from '../tokens';
+import { ICustomButton } from './CustomButton.interface';
 
-export const CustomButton = ({
+export default function CustomButton({
 	text,
 	size = 'l',
 	...props
-}: PressableProps & {
-	text: string;
-	size?: 's' | 'm' | 'l';
-}) => {
+}: PressableProps & ICustomButton) {
 	const animatedValue = new Animated.Value(100);
 	const color = animatedValue.interpolate({
 		inputRange: [0, 100],
@@ -55,7 +53,7 @@ export const CustomButton = ({
 			</Animated.View>
 		</Pressable>
 	);
-};
+}
 
 const styles = StyleSheet.create({
 	button: {
@@ -74,12 +72,12 @@ const styles = StyleSheet.create({
 	},
 	buttonL: {
 		height: 62,
-		// backgroundColor: Colors.primary,
 		backgroundColor: Colors.black,
 		borderRadius: Radius.r16,
 	},
 	text: {
 		color: Colors.white,
 		fontSize: Fonts.f18,
+		fontFamily: 'SoraSemi',
 	},
 });

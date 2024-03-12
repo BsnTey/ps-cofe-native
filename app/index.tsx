@@ -1,14 +1,15 @@
 import { ImageBackground, StyleSheet, Text, View } from 'react-native';
-import { CustomButton } from './shared/Button/Button';
-import { Colors, Fonts, Gaps } from './shared/tokens';
-import MainTitle from './shared/MainTitle/MainTitle';
+import MainTitle from '../shared/MainTitle/MainTitle';
+import { Colors, Fonts, Gaps } from '../shared/tokens';
+import React from 'react';
+import LinkButton from '../shared/LinkButton/LinkButton';
 
-export default function App() {
+export default function Index() {
 	return (
 		<View style={styles.container}>
 			<View style={styles.content}>
 				<ImageBackground
-					source={require('./assets/cofeBack.png')}
+					source={require('../assets/cofeBack.png')}
 					resizeMode="contain"
 					style={styles.image}
 				></ImageBackground>
@@ -16,7 +17,7 @@ export default function App() {
 					<MainTitle />
 					<Text style={styles.titleDesk}>Свежие зерна, настоящая арабика и бережная обжарка</Text>
 				</View>
-				<CustomButton text="Начать" />
+				<LinkButton href="catalog" text="Начать" />
 			</View>
 		</View>
 	);
@@ -45,10 +46,11 @@ const styles = StyleSheet.create({
 		gap: Gaps.g16,
 	},
 	titleDesk: {
+		fontFamily: 'Sora',
 		fontSize: Fonts.f14,
 		lineHeight: 21,
 		color: Colors.graySec,
 		textAlign: 'center',
-		width: 315,
+		width: 300,
 	},
 });

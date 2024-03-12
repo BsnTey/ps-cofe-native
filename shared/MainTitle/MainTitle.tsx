@@ -13,7 +13,7 @@ export default function MainTitle() {
 		}),
 		Animated.timing(animatedValueOpacity, {
 			toValue: 1,
-			duration: 1000,
+			duration: 2000,
 			useNativeDriver: true,
 		}),
 	]).start();
@@ -35,6 +35,7 @@ export default function MainTitle() {
 
 const styles = StyleSheet.create({
 	title: {
+		fontFamily: 'SoraSemi',
 		fontSize: 34,
 		fontWeight: '800',
 		lineHeight: 42,
